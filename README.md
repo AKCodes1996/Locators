@@ -192,7 +192,7 @@ Demo site :: http://compendiumdev.co.uk/selenium/basic_web_page.html
 
 
 
-#  XPath Expressions – Part 2 – Demonstrate at http://omayo.blogspot.in/
+# 2.6  XPath Expressions – Part 2 – Demonstrate at http://omayo.blogspot.in/
 - Find all the hyper links in the page 
     - //a
 - Find all the hyper links having URL ‘http://www.Selenium143.blogspot.com’ 
@@ -213,3 +213,60 @@ Demo site :: http://compendiumdev.co.uk/selenium/basic_web_page.html
     - //body/*[1]
 - Find second child of ‘body’ tag 
     - //body/*[2]
+
+
+# 2.7 xpath function part 1
+## 1. text() – Demonstrate at http://omayo.blogspot.in/
+- Find the p tags having the exact text ‘PracticeAutomationHere’ 
+	-  //p[text()=’PracticeAutomationHere’]
+- Use . instead of text() – Find the p tag having the exact text ‘PracticeAutomationHere’ 
+	-  //p[.=’PracticeAutomationHere’]
+
+## 2. contains() – Demonstrate at http://omayo.blogspot.in/
+Purpose:
+- It is used when the value of any attribute changes dynamically.
+- Has the ability to find the elements with partial text
+- If part of the attribute value is changing dynamically i.e. id=’123main123′ to id=’456main456′, we can use //tagName[contains(@id,’main’)] to locate such dynamically changing attribute values.
+- Find the input tag having the text ‘ra’ inside its value attribute text 
+	-  //input[contains(@value,’ra’)]
+- Find the p tag containing the text ‘Automation’  
+	- //p[contains(text(),’Automation’)]
+- Find the p tag containing the text ‘Automation’ using.
+	- //p[contains(.,’Automation’)]
+## 3. starts-with()
+- It is used when the value of any attribute changes dynamically.
+- Has the ability to find the elements with partial text i.e. initial partial text
+- If part of the attribute value is changing dynamically i.e. id=’main123′ to id=’main456′, we can use //tagName[starts-with(@id,’main’)] to locate such dynamically changing attribute values.
+- Find the input tag having the value attribute text starting with letter ‘o’ 
+    -  //input[starts-with(@value,’o’)]
+- Find the p tag starting with text ‘Practice’ 
+    - //*[starts-with(text(),’Practice’)]
+- Find the p tag starting with text ‘Practice’ using . 
+    -  //*[starts-with(.,’Practice’)]
+# 2.8 XPath functions: Part2 (Demonstrate at http://compendiumdev.co.uk/selenium/basic_web_page.html )
+## 4. last()
+- Find the first child of ‘body’ tag 
+    -  //body/*[1]
+- last() – Find the last child of ‘body’ tag 
+    - //body/*[last()]
+- Find the first ‘p’ tag 
+    - //p[1]
+- last() – Find the last ‘p’ tag 
+    -  //p[last()]
+- Find the last but one ‘p’ tag 
+    - //p[last()-1]
+- Locate the last but 2 input tag 
+    - (//input)[last()-2]  (Demonstrate at http://omayo.blogspot.in/ )
+- Find second ‘p’ tag having class ‘sub’ 
+    - //p[2][@class=’sub’]
+- Find the last ‘p’ tag having class ‘sub’ 
+    - //p[last()][@class=’sub’]
+- Find the last but one ‘p’ tag having class ‘main’ 
+    -  //p[last()-1][@class=’main’]
+# 2.9 XPath functions: Part3 (Demonstrate at http://compendiumdev.co.uk/selenium/basic_web_page.html )
+## 5. position() – Find the first ‘p’ tag – //p[position()=1]
+- position() – Find the second ‘p’ tag 
+    - //p[position()=2]
+- position() – Find the 8th input tag 
+    - (//input)[position()=8]   
+- (Demonstrate at http://omayo.blogspot.in/ )
